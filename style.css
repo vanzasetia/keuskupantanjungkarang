@@ -231,6 +231,12 @@ a {
   padding-bottom: 3rem;
 }
 
+.footer :focus {
+  background-color: var(--white);
+  outline-color: var(--white);
+  color: var(--very-dark-blue);
+}
+
 .footer__container > * + * {
   margin-top: 2rem;
 }
