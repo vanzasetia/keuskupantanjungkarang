@@ -163,7 +163,7 @@ main h2 {
 }
 
 main .container > * + * {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .news__list {
