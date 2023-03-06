@@ -91,6 +91,35 @@ a {
   color: inherit;
 }
 
+[href="#main"] {
+  display: inline-block;
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  transform: translateX(-200%);
+  z-index: 200;
+  background-color: var(--white);
+  color: var(--very-dark-blue);
+  padding: 1em 2em;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [href="#main"] {
+    transition: transform 300ms ease;
+  }
+}
+
+[href="#main"]:focus {
+  outline-color: var(--white);
+  transform: translate(0);
+}
+
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
 .container {
   max-width: 73.125rem;
   margin-left: auto;
