@@ -79,6 +79,10 @@ h3 {
   font-size: 1.95rem;
 }
 
+ul {
+  list-style: none;
+}
+
 p {
   max-width: 60ch;
 }
@@ -128,23 +132,39 @@ a {
   padding-right: 1rem;
 }
 
-header {
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--column-width, 18rem), 100%), 1fr)
+  );
+  gap: var(--space, 1.4rem);
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem;
+  border: 0.06rem solid;
+  text-decoration-color: transparent;
+  font-weight: 700;
+}
+
+.header {
   background-color: var(--very-dark-blue);
   color: var(--white);
 }
 
-header a {
-  color: var(--yellow);
-}
-
-nav ul {
-  list-style: none;
+.header__list {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-header .container {
+.header__link {
+  color: var(--yellow);
+}
+
+.header__container {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
@@ -154,22 +174,16 @@ header .container {
   padding-bottom: 2rem;
 }
 
-main {
+.main {
   color: var(--black);
 }
 
-main h2 {
+.main__sub-title {
   margin-bottom: 1rem;
 }
 
-main .container > * + * {
+.main__container > * + * {
   margin-top: 3rem;
-}
-
-.news__list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(17rem, 100%), 1fr));
-  gap: 1.4rem;
 }
 
 .news__item > * + * {
@@ -183,18 +197,6 @@ main .container > * + * {
 
 .news__thumbnail {
   width: 100%;
-}
-
-.videos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(17rem, 100%), 1fr));
-  gap: 1.4rem;
-}
-
-.links {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(17rem, 100%), 1fr));
-  gap: 1.4rem;
 }
 
 .links__card {
@@ -222,28 +224,28 @@ main .container > * + * {
   border-radius: 50%;
 }
 
-footer {
+.footer {
   background-color: var(--very-dark-blue);
   color: var(--white);
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
 
-footer .container > * + * {
+.footer__container > * + * {
   margin-top: 2rem;
 }
 
-footer ul {
-  padding-left: 2.5rem;
-}
-
-footer h2 {
+.footer__title {
   padding-bottom: 0.5rem;
   border-bottom: 0.06rem solid var(--yellow);
 }
 
-footer h2 + * {
+.footer__title + * {
   margin-top: 1rem;
+}
+
+.footer__list li {
+  margin-top: 0.5rem;
 }
 
 .footer__copyright {
@@ -251,13 +253,18 @@ footer h2 + * {
   margin-top: 2rem;
   padding-top: 1rem;
   border-top: 0.1rem solid;
-  flex-basis: 100%;
 }
 
-.button {
-  display: inline-block;
-  padding: 1rem;
-  border: 0.06rem solid;
-  text-decoration-color: transparent;
-  font-weight: 700;
+.footer-nav {
+  --column-width: 20rem;
+  --space: 2rem;
+  max-width: 56rem;
+}
+
+.footer-nav__list {
+  margin-top: 1rem;
+}
+
+.footer-nav__list li {
+  margin-top: 0.5rem;
 }
