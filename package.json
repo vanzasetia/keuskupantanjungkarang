@@ -1,0 +1,18 @@
+{
+  "name": "Keuskupan Tanjung Karang",
+  "version": "1.0.0",
+  "scripts": {
+    "minify:html": "html-minifier --collapse-boolean-attributes --collapse-whitespace --remove-comments --remove-redundant-attributes --remove-script-type-attributes --minify-css true --minify-js true --output-dir ./ --input-dir ./ --output index.html --file-ext html",
+    "minify:css": "purifycss ./style.css ./index.html --min --out ./style.css --info",
+    "help": "html-minifier --help",
+    "minify:js": "terser ./app.js --output ./app.js --compress --mangle",
+    "build": "npm-run-all minify:html minify:css"
+  },
+  "devDependencies": {
+    "html-minifier": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "purify-css": "^1.2.5",
+    "terser": "^5.16.5"
+  }
+}
+
