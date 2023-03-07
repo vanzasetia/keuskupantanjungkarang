@@ -83,12 +83,27 @@ ul {
   list-style: none;
 }
 
-p {
-  max-width: 60ch;
+p,
+li {
+  max-width: 70ch;
 }
 
 p + p {
   margin-top: 1rem;
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+label span {
+  display: block;
 }
 
 a {
@@ -124,6 +139,16 @@ a {
   outline: none;
 }
 
+.sr-only {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
 .container {
   max-width: 73.125rem;
   margin-left: auto;
@@ -149,6 +174,7 @@ a {
   font-weight: 700;
   background-color: var(--very-dark-blue);
   color: var(--white);
+  cursor: pointer;
 }
 
 .button:focus {
@@ -209,6 +235,11 @@ a {
   margin-top: 3rem;
 }
 
+.news__list {
+  align-items: flex-start;
+  grid-template-rows: masonry;
+}
+
 .news__item > * + * {
   margin-top: 0.8rem;
 }
@@ -245,6 +276,85 @@ a {
   height: 9rem;
   background-color: var(--very-dark-blue);
   border-radius: 50%;
+}
+
+.blog__container > * + * {
+  margin-top: 1.4rem;
+}
+
+.blog ul {
+  list-style: initial;
+  padding-left: 2.5rem;
+  padding-inline-start: 2.5rem;
+}
+
+.form {
+  margin-top: 2rem;
+  max-width: 70ch;
+}
+
+.form > * + * {
+  margin-top: 1.5rem;
+}
+
+.form input:not([type="checkbox"]),
+.form textarea {
+  display: block;
+  padding: 1rem;
+  width: 100%;
+  border: 0.06rem solid;
+  margin-top: 0.8rem;
+}
+
+.form label {
+  font-weight: 700;
+}
+
+.form__description {
+  font-weight: 400;
+}
+
+.form__checkbox {
+  position: relative;
+}
+
+.form__checkbox::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.2rem solid;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.form__checkbox::after {
+  display: inline-block;
+  position: absolute;
+  top: 0.1rem;
+  left: 0.5rem;
+  width: 0.5rem;
+  height: 1rem;
+  color: var(--white);
+  border-right: 0.3rem solid;
+  border-bottom: 0.3rem solid;
+  transform: rotate(30deg);
+  cursor: pointer;
+}
+
+.form__input-checkbox:focus + .form__checkbox::before {
+  outline: 0.3rem solid var(--black);
+  outline-offset: 0.3rem;
+}
+
+.form__input-checkbox:checked + .form__checkbox::before {
+  border-color: var(--very-dark-blue);
+  background-color: var(--very-dark-blue);
+}
+
+.form__input-checkbox:checked + .form__checkbox::after {
+  content: "";
 }
 
 .footer {
