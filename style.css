@@ -162,8 +162,12 @@ a {
 
 .header__list {
   display: flex;
-  gap: 1rem;
+  margin: -0.5rem;
   flex-wrap: wrap;
+}
+
+.header__list li {
+  margin: 0.5rem;
 }
 
 .header__link {
@@ -173,11 +177,24 @@ a {
 .header__container {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
   flex-wrap: wrap;
   align-items: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+}
+
+.header__home {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.header__nav {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }
 
 .main {
