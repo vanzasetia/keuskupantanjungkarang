@@ -144,9 +144,15 @@ a {
 .button {
   display: inline-block;
   padding: 1rem;
-  border: 0.06rem solid;
+  border: 0;
   text-decoration-color: transparent;
   font-weight: 700;
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+}
+
+.button:focus {
+  outline-color: var(--black);
 }
 
 .header {
