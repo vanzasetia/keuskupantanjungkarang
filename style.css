@@ -17,8 +17,15 @@
 :root {
   --very-dark-blue: #004360;
   --yellow: #faf350;
-  --white: #fbfbfb;
+  --white: #eee;
   --black: #333;
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --white: #fbfbfb;
+    --black: #222;
+  }
 }
 
 *,
